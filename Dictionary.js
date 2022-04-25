@@ -6,10 +6,10 @@ function addWord() {
 
 function searchWord() {
   const searchedWord = document.getElementById("search").value;
-  let isInDictionary = wordsList.search(searchedWord);
-  if (isInDictionary > -1) {
-  	alert(`The word "${searchedWord}" is in dictionary!`);
+  let foundWord = wordsList.search(searchedWord);
+  if (foundWord > -1) {
+  	alert(`"${searchedWord}" exists in the dictionary!`);
   } else {
-  	alert(`The word "${searchedWord}" is not in dictionary!`);
+  	alert(`"${searchedWord}" is not found in the dictionary!`);
   }
 }
