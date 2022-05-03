@@ -1,15 +1,18 @@
-let wordsList = "";
+const wordList = [];
 function addWord() {
-	const addedWord = (document.getElementById("add").value);
-	wordsList += addedWord;
+	let addedWord = document.getElementById("add").value;
+  let trimedWord = addedWord.trim();
+  wordList.push(trimedWord);
+  console.log(wordList);
 }
 
 function searchWord() {
-  const searchedWord = document.getElementById("search").value;
-  let foundWord = wordsList.search(searchedWord);
-  if (foundWord > -1) {
-  	alert(`"${searchedWord}" exists in the dictionary!`);
+	let searchedWord = document.getElementById("search").value;
+  let trimedWord = searchedWord.trim();
+  if(wordList.includes(trimedWord)) {
+  	alert(`The word "${trimedWord}" exists in the dictionary!`);
   } else {
-  	alert(`"${searchedWord}" is not found in the dictionary!`);
+  	alert(`The word "${trimedWord}" does NOT exist in the dictionary!`);
   }
+  
 }
